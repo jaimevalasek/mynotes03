@@ -9,22 +9,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $name
  * @property string $description
- * @property boolean $status
+ * @property Note $note
  * 
  */
-class Note extends Model
+class NoteItem extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
         'description',
-        'status',
-        'user_id'
+        'note_id',
     ];
-
-    public function noteItems()
-    {
-        return $this->hasMany(NoteItem::class);
-    }
 }
