@@ -24,15 +24,20 @@ class NoteController extends Controller
     public function home(Request $request)
     {        
         $auth = Auth::user();
+        $notes = $this->note;
+        //$notes->load('noteItems');
 
-        $notes = $this->note->query();
+        $notes= $notes->query();
         $notes->where('user_id', $auth->id);
         $notes->when($request->search, function($query, $val) {
             $query->where('name', 'like', '%' . $val . '%');
         });
+        $notes->orWhereHas('noteItems', function ($query) use ($request) {
+            $query->where('description', 'like', '%' . $request->search . '%');            
+        });
 
         $notes = $notes->get();
-
+        
         return view('notes.home', ['notes' => $notes]);
     }
 
