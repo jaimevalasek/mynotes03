@@ -37,7 +37,7 @@
                     <div class="h-full border border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                         <div class="p-6">
                             <h1 class="title-font text-lg font-medium text-gray-900 mb-1">{{ $noteItem->name }}</h1>
-                            <p class="leading-relaxed mb-1"><pre>{{ $noteItem->description }}</pre></p>
+                            <p class="leading-relaxed mb-1">{!! nl2br($noteItem->description) !!}</p>
                         </div>
                     </div>
                 </div>

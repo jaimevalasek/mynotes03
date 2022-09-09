@@ -18,7 +18,7 @@
     <label class="block font-medium text-sm text-gray-700" for="name">Description</label>
 
     <textarea
-        class="block p-2.5 w-full text-sm text-gray-900 border-none bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        class="block p-2.5 w-full text-sm text-gray-900 border-none bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-96"
         id="name" type="text" name="description" required="required">{{ $noteItem->description ?? old('description') }}</textarea>
 </div>
 
